@@ -6,3 +6,11 @@ module.exports = {
   },
   plugins: [],
 };
+// tailwind.config.js
+module.exports = {
+  // Other configuration options...
+  plugins: [
+    require('@tailwindcss/blend-mode'),
+    // Other plugins if any...
+  ],
+};

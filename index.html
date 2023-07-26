@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -18,7 +22,163 @@
 </head>
 
 <body class="font-lato">
-
+    <!----------------- Header section start  ---------------->
+    <header class="w-9/12 mx-auto">
+        <!----------------- Nav section start  ---------------->
+        <nav class="navbar bg-red-500 rounded-full flex justify-between items-center py-5 mt-8 text-white">
+            <div>
+                <ul class="flex">
+                    <li class="pl-5"><a class="text-[18] font-medium" href="#">Home</a></li>
+                    <li class="pl-5"><a class="text-[18] font-medium" href="#">About Us</a></li>
+                    <li class="pl-5"><a class="text-[18] font-medium" href="#">Shop</a></li>
+                    <li class="pl-5"><a class="text-[18] font-medium" href="#">All Fruits</a></li>
+                </ul>
+            </div>
+            <div class="flex justify-center items-center">
+                <img class="w-8 h-auto mr-3" src="images/logo.png" alt="logo">
+                <h2 class="text-2xl font-bold">Fruit Burst</h2>
+            </div>
+            <div class="bg-slate-50 rounded-full p-1 mr-5">
+                <input class="bg-transparent text-sm px-3 outline-none" type="text" placeholder="Search-here">
+                <a href="#">
+                    <svg class="mr-5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none">
+                        <path
+                            d="M20.9998 21L15.8028 15.803M15.8028 15.803C17.2094 14.3965 17.9996 12.4887 17.9996 10.4995C17.9996 8.51035 17.2094 6.60262 15.8028 5.19605C14.3962 3.78947 12.4885 2.99927 10.4993 2.99927C8.51011 2.99927 6.60238 3.78947 5.19581 5.19605C3.78923 6.60262 2.99902 8.51035 2.99902 10.4995C2.99902 12.4887 3.78923 14.3965 5.19581 15.803C6.60238 17.2096 8.51011 17.9998 10.4993 17.9998C12.4885 17.9998 14.3962 17.2096 15.8028 15.803Z"
+                            stroke="#121212" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </nav>
+        <!----------------- Carousel banner section start  ---------------->
+        <section>
+            <div>
+                <div
+                    class="z-50 transform -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 text-center text-white">
+                    <h1 class="text-5xl font-bold mb-3">Exotic tastes at your<br> doorstep</h1>
+                    <p class="text-[20] font-medium mb-5">We supply highly quality organic products</p>
+                    <button class="btn bg-[#F85559] border-none hover:text-white hover:bg-red-500">Shop Now</button>
+                </div>
+                <div class="carousel w-full mt-8 relative z-10">
+                    <div id="slide1" class="carousel-item relative w-full">
+                        <img src="/images/banner1.png" class="w-full" />
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
+                        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                            <a href="#slide4" class="btn btn-circle">❮</a>
+                            <a href="#slide2" class="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide2" class="carousel-item relative w-full">
+                        <img src="/images/banner2.png" class="w-full" />
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
+                        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                            <a href="#slide1" class="btn btn-circle">❮</a>
+                            <a href="#slide3" class="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide3" class="carousel-item relative w-full">
+                        <img src="/images/banner3.png" class="w-full" />
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
+                        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                            <a href="#slide2" class="btn btn-circle">❮</a>
+                            <a href="#slide4" class="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide4" class="carousel-item relative w-full">
+                        <img src="/images/banner4.png" class="w-full" />
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
+                        <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                            <a href="#slide3" class="btn btn-circle">❮</a>
+                            <a href="#slide1" class="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----------------- Overflow section start  ---------------->
+            <div class="w-8/12 mx-auto py-20 relative z-10 ">
+                <div class="flex justify-center gap-10 bg-white p-8 mb-40 shadow-md absolute -top-20 z-20 text-center">
+                    <div>
+                        <img src="images/fruit1.png" alt="fruit1">
+                        <span class="text-sm text-[rgba(18, 18, 18, 0.80)] font-medium">Strawberry</span>
+                    </div>
+                    <div>
+                        <img src="images/fruit2.png" alt="fruit2">
+                        <span class="text-sm text-[rgba(18, 18, 18, 0.80)] font-medium">Orange</span>
+                    </div>
+                    <div>
+                        <img src="images/fruit3.png" alt="fruit3">
+                        <span class="text-sm text-[rgba(18, 18, 18, 0.80)] font-medium">Mango</span>
+                    </div>
+                    <div>
+                        <img src="images/fruit4.png" alt="fruit4">
+                        <span class="text-sm text-[rgba(18, 18, 18, 0.80)] font-medium">Strawberry</span>
+                    </div>
+                    <div>
+                        <img src="images/fruit5.png" alt="fruit5">
+                        <span class="text-sm text-[rgba(18, 18, 18, 0.80)] font-medium">Mango</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!----------------- Main section start  ---------------->
+    <main class="w-9/12 mx-auto">
+        <!----------------- Coundown section start  ---------------->
+        <div class="flex justify-between py-20">
+            <div>
+                <h2 class="text-[#121212] text-3xl font-bold mb-5">Deal of the day</h2>
+                <p class="text-[rgba(18, 18, 18, 0.60)] text-sm font-medium">Contrary to popular belief, is not simply
+                    random text.
+                    It has roots in a piece of
+                    classical<br> Latin
+                    literature from 45 BC,
+                    making it over 2000 years old.</p>
+            </div>
+            <div>
+                <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+                    <div class="flex flex-col">
+                        <span class="countdown font-mono text-5xl">
+                            <span style="--value:15;"></span>:
+                        </span>
+                        days
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="countdown font-mono text-5xl">
+                            <span style="--value:10;"></span>:
+                        </span>
+                        hours
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="countdown font-mono text-5xl">
+                            <span style="--value:24;"></span>:
+                        </span>
+                        min
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="countdown font-mono text-5xl">
+                            <span style="--value:24;"></span>
+                        </span>
+                        sec
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!----------------- Card section start  ---------------->
+        <div class="py-20">
+            <div class="card w-96 bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                    <img src="/images/" alt="Shoes" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Shoes!</h2>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <div class="card-actions">
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
