@@ -1,6 +1,0 @@
-/* custom.css */
-@layer utilities {
-  .bg-blend-overlay {
-    background-blend-mode: overlay;
-  }
-}
