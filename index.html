@@ -24,20 +24,24 @@
     <!----------------- Header section start  ---------------->
     <header class="w-9/12 h-screen mx-auto">
         <!----------------- Nav section start  ---------------->
-        <nav class="navbar bg-red-500 rounded-full flex justify-between items-center py-5 mt-8 text-white">
+        <nav class="navbar md:bg-red-500 md:rounded-full flex justify-between items-center py-5 mt-8 md:text-white">
             <div>
-                <ul class="flex">
+                <ul class="hidden md:flex">
                     <li class="pl-5"><a class="text-[18] font-medium" href="#">Home</a></li>
                     <li class="pl-5"><a class="text-[18] font-medium" href="#">About Us</a></li>
                     <li class="pl-5"><a class="text-[18] font-medium" href="#">Shop</a></li>
                     <li class="pl-5"><a class="text-[18] font-medium" href="#">All Fruits</a></li>
                 </ul>
             </div>
-            <div class="flex justify-center items-center">
+            <div class="flex-1 md:flex md:justify-center items-center">
                 <img class="w-8 h-auto mr-3" src="images/logo.png" alt="logo">
                 <h2 class="text-2xl font-bold">Fruit Burst</h2>
             </div>
-            <div class="bg-slate-50 rounded-full p-1 mr-5">
+            <!-- Mobile Menu Button (hamburger icon) -->
+            <button class="md:hidden text-[#121212]">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="hidden md:flex bg-slate-50 rounded-full p-1 mr-5">
                 <input class="bg-transparent text-sm px-3 outline-none" type="text" placeholder="Search-here">
                 <a href="#">
                     <svg class="mr-5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
@@ -51,12 +55,16 @@
         </nav>
         <!----------------- Carousel banner section start  ---------------->
         <section>
-            <div>
+            <div class="">
                 <div
-                    class="z-20 transform -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 text-center text-white">
-                    <h1 class="text-5xl font-bold mb-3">Exotic tastes at your<br> doorstep</h1>
-                    <p class="text-[20] font-medium mb-5">We supply highly quality organic products</p>
-                    <button class="btn bg-[#F85559] border-none hover:text-white hover:bg-red-500">Shop Now</button>
+                    class="z-20 transform -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 text-center text-white -mt-20">
+                    <h1 class="text-base leading-5 md:text-5xl font-bold mt-8 mb-2 md:mb-3">Exotic tastes at your<br>
+                        doorstep</h1>
+                    <p class="text-xs md:text-[20] font-medium mb-1 md:mb-5">We supply highly quality organic products
+                    </p>
+                    <button
+                        class="px-3 py-1 rounded-sm md:btn bg-[#F85559] border-none hover:text-white hover:bg-red-500 mt-2">Shop
+                        Now</button>
                 </div>
                 <div class="carousel w-full mt-8 relative z-10">
                     <div id="slide1" class="carousel-item relative w-full">
@@ -94,8 +102,9 @@
                 </div>
             </div>
             <!----------------- Overflow section start  ---------------->
-            <div class="w-8/12 mx-auto py-10 relative z-10 ">
-                <div class="flex justify-center gap-10 bg-white p-8 mb-40 shadow-md absolute -top-20 z-20 text-center">
+            <div class="hidden md:w-8/12 md:mx-auto md:py-10 md:relative md:z-10 ">
+                <div
+                    class="flex justify-center gap-10 bg-white p-8 mb-40 shadow-md md:absolute -top-20 z-20 text-center">
                     <div>
                         <img src="images/fruit1.png" alt="fruit1">
                         <span class="text-sm text-[rgba(18, 18, 18, 0.80)] font-medium">Strawberry</span>
@@ -376,7 +385,7 @@
                             <i class="fa-solid fa-users"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl text-[#121212] font-bold">Dedicated Team</h3>
+                            <h3 class="text-2xl text-[#121212] font-bold mb-3">Dedicated Team</h3>
                             <hr class="w-20 h-1 bg-gray-300 mb-3">
                             <p class="text-sm text-[rgba(18, 18, 18, 0.60)] font-medium">Professional employees are
                                 there
@@ -388,7 +397,7 @@
                             <i class="fa-solid fa-heart"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl text-[#121212] font-bold">Fresh is Best</h3>
+                            <h3 class="text-2xl text-[#121212] font-bold mb-3">Fresh is Best</h3>
                             <hr class="w-20 h-1 bg-gray-300 mb-3">
                             <p class="text-sm text-[rgba(18, 18, 18, 0.60)] font-medium">Professional employees are
                                 there
@@ -400,7 +409,7 @@
                             <i class="fa-solid fa-box"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl text-[#121212] font-bold">Gift Certificates</h3>
+                            <h3 class="text-2xl text-[#121212] font-bold mb-3">Gift Certificates</h3>
                             <hr class="w-20 h-1 bg-gray-300 mb-3">
                             <p class="text-sm text-[rgba(18, 18, 18, 0.60)] font-medium">Professional employees are
                                 there
@@ -461,6 +470,38 @@
             </div>
         </div>
     </main>
+    <!----------------- Footer section start  ---------------->
+    <footer class="bg-[#121212] py-20">
+        <div>
+            <div class="flex justify-center items-center mb-10">
+                <img class="w-8 h-auto mr-3" src="images/logo.png" alt="logo">
+                <h2 class="text-2xl font-bold text-white">Fruit Burst</h2>
+            </div>
+            <div class="text-white">
+                <ul class="flex justify-center items-center mb-5">
+                    <li class="px-5"><a class="text-[18] font-medium" href="#">Home</a></li>
+                    <li class="px-5"><a class="text-[18] font-medium" href="#">About Us</a></li>
+                    <li class="px-5"><a class="text-[18] font-medium" href="#">Shop</a></li>
+                    <li class="px-5"><a class="text-[18] font-medium" href="#">All Fruits</a></li>
+                    <li class="px-5"><a class="text-[18] font-medium" href="#">Support</a></li>
+                    <li class="px-5"><a class="text-[18] font-medium" href="#">My Account</a></li>
+                </ul>
+            </div>
+            <div class="text-white">
+                <ul class="flex justify-center items-center">
+                    <li class="px-5 hover:rotate-180 ease-in duration-500"><a href="#"><i
+                                class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li class="px-5 hover:rotate-180 ease-in duration-500"><a href="#"><i
+                                class="fa-brands fa-facebook"></i></a></li>
+                    <li class="px-5 hover:rotate-180 ease-in duration-500"><a href="#"><i
+                                class="fa-brands fa-youtube"></i></a></li>
+                    <li class="px-5 hover:rotate-180 ease-in duration-500"><a href="#"><i
+                                class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
