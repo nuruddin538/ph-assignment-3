@@ -14,6 +14,17 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Add custom styles for expanded cards */
+        .card.expanded {
+            display: none;
+            transform: scale(1.2);
+        }
+
+        .expanded-card-container {
+            display: flex;
+        }
+    </style>
+    <style>
         .font-lato {
             font-family: 'Lato', sans-serif;
         }
@@ -22,9 +33,9 @@
 
 <body class="font-lato">
     <!----------------- Header section start  ---------------->
-    <header class="w-9/12 h-auto mx-auto">
+    <header class="w-9/12 h-auto mx-auto py-5">
         <!----------------- Nav section start  ---------------->
-        <nav class="navbar md:bg-red-500 md:rounded-full flex justify-between items-center py-5 mt-8 md:text-white">
+        <nav class="navbar md:bg-red-500 md:rounded-full flex justify-between items-center py-5 md:text-white">
             <div>
                 <ul class="hidden md:flex">
                     <li class="pl-5"><a class="text-[18] font-medium" href="#">Home</a></li>
@@ -175,11 +186,12 @@
         </div>
         <!----------------- Card section start  ---------------->
         <div class="md:flex justify-center gap-5 py-10">
-            <div class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto">
+            <!-------------- Ragular Card  -->
+            <div class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto z-10 card" onclick="expandCard(this)">
                 <figure class="px-10 pt-10">
                     <img src="images/fruit6.png" alt="fruit6" class="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center">
+                <div class="card-body items-center text-center content">
                     <h2 class="card-title text-[#121212] text-xl font-bold">12.90$ - 18.85$</h2>
                     <p class="text-[rgba(18, 18, 18, 0.60)] text-sm">Apples</p>
                     <span><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 160 24"
@@ -208,11 +220,52 @@
                     </div>
                 </div>
             </div>
-            <div class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto">
+            <!------------------- Centered Expanded Card (Hidden by default) ------------------->
+            <div class="fixed top-0 left-0 justify-center items-center w-full h-full bg-black bg-opacity-50 hidden z-20 expanded-card-container"
+                onclick="closeExpandedCard()">
+                <div
+                    class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto p-8 bg-white border border-gray-300 rounded-md expanded-card">
+                    <figure class="px-10 pt-10">
+                        <img src="images/fruit6.png" alt="fruit6" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-[#121212] text-xl font-bold">Red Dragon</h2>
+                        <p class="text-[rgba(18, 18, 18, 0.60)] text-sm">Professional employees are there for you to
+                            pick the most amazing and fresh fruits.</p>
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 160 24"
+                                fill="none">
+                                <path
+                                    d="M45.8529 0L50.4018 7.00591L58.4705 9.16716L53.2131 15.6584L53.651 24L45.8529 21.0059L38.0549 24L38.4927 15.6584L33.2354 9.16716L41.3041 7.00591L45.8529 0Z"
+                                    fill="#F85559" />
+                                <path
+                                    d="M45.9038 0L50.4527 7.00591L58.5214 9.16716L53.264 15.6584L53.7018 24L45.9038 21.0059V0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z"
+                                    fill="#F85559" />
+                                <path
+                                    d="M79.6176 0L84.1664 7.00591L92.2351 9.16716L86.9778 15.6584L87.4156 24L79.6176 21.0059L71.8195 24L72.2574 15.6584L67 9.16716L75.0687 7.00591L79.6176 0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M146.618 0L151.166 7.00591L159.235 9.16716L153.978 15.6584L154.416 24L146.618 21.0059L138.82 24L139.257 15.6584L134 9.16716L142.069 7.00591L146.618 0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M113.618 0L118.166 7.00591L126.235 9.16716L120.978 15.6584L121.416 24L113.618 21.0059L105.82 24L106.257 15.6584L101 9.16716L109.069 7.00591L113.618 0Z"
+                                    fill="#FBC0A8" />
+                            </svg></span>
+                        <div class="card-actions flex justify-center">
+                            <button class="text-[#F85559] text-sm font-medium">Close</button>
+                            <button class="text-[#F85559] text-sm font-medium">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-------------Regular card -------------->
+            <div class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto z-10 card" onclick="expandCard(this)">
                 <figure class="px-10 pt-10">
                     <img src="images/fruit7.png" alt="fruit7" class="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center">
+                <div class="card-body items-center text-center content">
                     <h2 class="card-title text-[#121212] text-xl font-bold">12.90$ - 18.85$</h2>
                     <p class="text-[rgba(18, 18, 18, 0.60)] text-sm">Apples</p>
                     <span><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 160 24"
@@ -241,11 +294,52 @@
                     </div>
                 </div>
             </div>
-            <div class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto">
+            <!------------------- Centered Expanded Card (Hidden by default) ------------------->
+            <div class="fixed top-0 left-0 justify-center items-center w-full h-full bg-black bg-opacity-50 hidden z-20 expanded-card-container"
+                onclick="closeExpandedCard()">
+                <div
+                    class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto p-8 bg-white border border-gray-300 rounded-md expanded-card">
+                    <figure class="px-10 pt-10">
+                        <img src="images/fruit7.png" alt="fruit7" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-[#121212] text-xl font-bold">Red Dragon</h2>
+                        <p class="text-[rgba(18, 18, 18, 0.60)] text-sm">Professional employees are there for you to
+                            pick the most amazing and fresh fruits.</p>
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 160 24"
+                                fill="none">
+                                <path
+                                    d="M45.8529 0L50.4018 7.00591L58.4705 9.16716L53.2131 15.6584L53.651 24L45.8529 21.0059L38.0549 24L38.4927 15.6584L33.2354 9.16716L41.3041 7.00591L45.8529 0Z"
+                                    fill="#F85559" />
+                                <path
+                                    d="M45.9038 0L50.4527 7.00591L58.5214 9.16716L53.264 15.6584L53.7018 24L45.9038 21.0059V0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z"
+                                    fill="#F85559" />
+                                <path
+                                    d="M79.6176 0L84.1664 7.00591L92.2351 9.16716L86.9778 15.6584L87.4156 24L79.6176 21.0059L71.8195 24L72.2574 15.6584L67 9.16716L75.0687 7.00591L79.6176 0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M146.618 0L151.166 7.00591L159.235 9.16716L153.978 15.6584L154.416 24L146.618 21.0059L138.82 24L139.257 15.6584L134 9.16716L142.069 7.00591L146.618 0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M113.618 0L118.166 7.00591L126.235 9.16716L120.978 15.6584L121.416 24L113.618 21.0059L105.82 24L106.257 15.6584L101 9.16716L109.069 7.00591L113.618 0Z"
+                                    fill="#FBC0A8" />
+                            </svg></span>
+                        <div class="card-actions flex justify-center">
+                            <button class="text-[#F85559] text-sm font-medium">Close</button>
+                            <button class="text-[#F85559] text-sm font-medium">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-------------Regular card -------------->
+            <div class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto z-10 card" onclick="expandCard(this)">
                 <figure class="px-10 pt-10">
                     <img src="images/fruit8.png" alt="fruit8" class="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center">
+                <div class="card-body items-center text-center content">
                     <h2 class="card-title text-[#121212] text-xl font-bold">12.90$ - 18.85$</h2>
                     <p class="text-[rgba(18, 18, 18, 0.60)] text-sm">Apples</p>
                     <span><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 160 24"
@@ -274,11 +368,52 @@
                     </div>
                 </div>
             </div>
-            <div class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto">
+            <!------------------- Centered Expanded Card (Hidden by default) ------------------->
+            <div class="fixed top-0 left-0 justify-center items-center w-full h-full bg-black bg-opacity-50 hidden z-20 expanded-card-container"
+                onclick="closeExpandedCard()">
+                <div
+                    class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto p-8 bg-white border border-gray-300 rounded-md expanded-card">
+                    <figure class="px-10 pt-10">
+                        <img src="images/fruit8.png" alt="fruit8" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-[#121212] text-xl font-bold">Red Dragon</h2>
+                        <p class="text-[rgba(18, 18, 18, 0.60)] text-sm">Professional employees are there for you to
+                            pick the most amazing and fresh fruits.</p>
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 160 24"
+                                fill="none">
+                                <path
+                                    d="M45.8529 0L50.4018 7.00591L58.4705 9.16716L53.2131 15.6584L53.651 24L45.8529 21.0059L38.0549 24L38.4927 15.6584L33.2354 9.16716L41.3041 7.00591L45.8529 0Z"
+                                    fill="#F85559" />
+                                <path
+                                    d="M45.9038 0L50.4527 7.00591L58.5214 9.16716L53.264 15.6584L53.7018 24L45.9038 21.0059V0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z"
+                                    fill="#F85559" />
+                                <path
+                                    d="M79.6176 0L84.1664 7.00591L92.2351 9.16716L86.9778 15.6584L87.4156 24L79.6176 21.0059L71.8195 24L72.2574 15.6584L67 9.16716L75.0687 7.00591L79.6176 0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M146.618 0L151.166 7.00591L159.235 9.16716L153.978 15.6584L154.416 24L146.618 21.0059L138.82 24L139.257 15.6584L134 9.16716L142.069 7.00591L146.618 0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M113.618 0L118.166 7.00591L126.235 9.16716L120.978 15.6584L121.416 24L113.618 21.0059L105.82 24L106.257 15.6584L101 9.16716L109.069 7.00591L113.618 0Z"
+                                    fill="#FBC0A8" />
+                            </svg></span>
+                        <div class="card-actions flex justify-center">
+                            <button class="text-[#F85559] text-sm font-medium">Close</button>
+                            <button class="text-[#F85559] text-sm font-medium">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-------------Regular card -------------->
+            <div class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto z-10 card" onclick="expandCard(this)">
                 <figure class="px-10 pt-10">
                     <img src="images/fruit9.png" alt="fruit9" class="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center">
+                <div class="card-body items-center text-center content">
                     <h2 class="card-title text-[#121212] text-xl font-bold">12.90$ - 18.85$</h2>
                     <p class="text-[rgba(18, 18, 18, 0.60)] text-sm">Apples</p>
                     <span><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 160 24"
@@ -304,6 +439,46 @@
                         </svg></span>
                     <div class="card-actions">
                         <button class="text-[#F85559] text-sm font-medium">Details</button>
+                    </div>
+                </div>
+            </div>
+            <!------------------- Centered Expanded Card (Hidden by default) ------------------->
+            <div class="fixed top-0 left-0 justify-center items-center w-full h-full bg-black bg-opacity-50 hidden z-20 expanded-card-container"
+                onclick="closeExpandedCard()">
+                <div
+                    class="card w-60 h-auto md:w-96 bg-base-100 shadow-xl mx-auto p-8 bg-white border border-gray-300 rounded-md expanded-card">
+                    <figure class="px-10 pt-10">
+                        <img src="images/fruit9.png" alt="fruit9" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title text-[#121212] text-xl font-bold">Red Dragon</h2>
+                        <p class="text-[rgba(18, 18, 18, 0.60)] text-sm">Professional employees are there for you to
+                            pick the most amazing and fresh fruits.</p>
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 160 24"
+                                fill="none">
+                                <path
+                                    d="M45.8529 0L50.4018 7.00591L58.4705 9.16716L53.2131 15.6584L53.651 24L45.8529 21.0059L38.0549 24L38.4927 15.6584L33.2354 9.16716L41.3041 7.00591L45.8529 0Z"
+                                    fill="#F85559" />
+                                <path
+                                    d="M45.9038 0L50.4527 7.00591L58.5214 9.16716L53.264 15.6584L53.7018 24L45.9038 21.0059V0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M12.6176 0L17.1664 7.00591L25.2351 9.16716L19.9778 15.6584L20.4156 24L12.6176 21.0059L4.81952 24L5.25735 15.6584L0 9.16716L8.06871 7.00591L12.6176 0Z"
+                                    fill="#F85559" />
+                                <path
+                                    d="M79.6176 0L84.1664 7.00591L92.2351 9.16716L86.9778 15.6584L87.4156 24L79.6176 21.0059L71.8195 24L72.2574 15.6584L67 9.16716L75.0687 7.00591L79.6176 0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M146.618 0L151.166 7.00591L159.235 9.16716L153.978 15.6584L154.416 24L146.618 21.0059L138.82 24L139.257 15.6584L134 9.16716L142.069 7.00591L146.618 0Z"
+                                    fill="#FBC0A8" />
+                                <path
+                                    d="M113.618 0L118.166 7.00591L126.235 9.16716L120.978 15.6584L121.416 24L113.618 21.0059L105.82 24L106.257 15.6584L101 9.16716L109.069 7.00591L113.618 0Z"
+                                    fill="#FBC0A8" />
+                            </svg></span>
+                        <div class="card-actions flex justify-center">
+                            <button class="text-[#F85559] text-sm font-medium">Close</button>
+                            <button class="text-[#F85559] text-sm font-medium">Buy Now</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -480,13 +655,13 @@
                 <h2 class="text-2xl font-bold text-white">Fruit Burst</h2>
             </div>
             <div class="text-white">
-                <ul class="grid grid-cols-3 md:grid-cols-6 gap-5 items-center mb-5">
-                    <li class="px-5"><a class="text-[18] font-medium" href="#">Home</a></li>
-                    <li class="px-5"><a class="text-[18] font-medium" href="#">About Us</a></li>
-                    <li class="px-5"><a class="text-[18] font-medium" href="#">Shop</a></li>
-                    <li class="px-5"><a class="text-[18] font-medium" href="#">All Fruits</a></li>
-                    <li class="px-5"><a class="text-[18] font-medium" href="#">Support</a></li>
-                    <li class="px-5"><a class="text-[18] font-medium" href="#">My Account</a></li>
+                <ul class="grid grid-cols-3 md:grid-cols-6 gap-1 items-center mb-5">
+                    <li><a class="text-[18] font-medium" href="#">Home</a></li>
+                    <li><a class="text-[18] font-medium" href="#">About Us</a></li>
+                    <li><a class="text-[18] font-medium" href="#">Shop</a></li>
+                    <li><a class="text-[18] font-medium" href="#">All Fruits</a></li>
+                    <li><a class="text-[18] font-medium" href="#">Support</a></li>
+                    <li><a class="text-[18] font-medium" href="#">My Account</a></li>
                 </ul>
             </div>
             <div class="text-white">
@@ -504,6 +679,7 @@
             </div>
         </div>
     </footer>
+    <script src="javascript.js"></script>
 </body>
 
 </html>
